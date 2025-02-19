@@ -1,9 +1,10 @@
-places: list = ["londra","islanda","canarie","tokyo","amsterdam"] 
-
-sorted(places)
-
+places: list = ["londra","reykjavik","canarie","tokyo","amsterdam"] 
 print(places)
-
-sorted(places)
-
+print(sorted(places))
+print(sorted(places, reverse= True))
+places.reverse()
+print(places)
+places.reverse()
+print(places)
+places.sort()
 print(places)
