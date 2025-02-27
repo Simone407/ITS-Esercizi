@@ -3,7 +3,7 @@ num:list[int] = [1,8,27,64,125,216,343,512,729,1000]
 print(num)
 
 a = slice(0,3)
-b = slice(3,6)
+b = slice(4,7)
 c = slice(7,10)
 
 print(f"The first three items in the list are: {num[a]}")
