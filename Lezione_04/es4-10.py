@@ -12,3 +12,4 @@ print(f"Three items from the middle of the list are: {num[b]}")
 
 print(f"The last three items in the list are: {num[c]}")
 
+
