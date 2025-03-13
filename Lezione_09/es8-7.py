@@ -10,6 +10,8 @@ def make_Album(artist:str,album:str):
 
     album:dict = []
 
+    return make_Album[artist,album]
+
 make_Album("Gue","TropicoDelCapricorno")
 make_Album("Salmo","Flop")
 make_Album("Calcutta","Mainstream")
