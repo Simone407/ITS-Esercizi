@@ -3,4 +3,4 @@ You should have keys such as first_name, last_name, age, and city. Print each pi
 
 mydict: dict = {"first_name":"alessandro", "last_name":"liberti","age":"19","city":"tokyo"}
 
-print(mydict)ò
+print(mydict)
