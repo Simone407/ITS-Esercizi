@@ -12,14 +12,19 @@ class Restaurant():
         self.cuisine_type = cuisine_type
 
     def describe_restaurant(self):
-        print(self.restaurant_name,type)
-        print(self.cuisine_type,type)
+        print(self.restaurant_name)
+        print(self.cuisine_type)
         
     def open_restaurant(self):
         print("open")
 
   
+
 restaurant = Restaurant("daje","mediterranea") 
 
+print(restaurant.restaurant_name)
+print(restaurant.cuisine_type)
 
-print(restaurant = restaurant_name)
+
+restaurant.describe_restaurant()
+restaurant.open_restaurant()    
