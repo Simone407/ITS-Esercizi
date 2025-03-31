@@ -2,6 +2,16 @@ import random
 import time
 
 
+posT = 1
+posL = 1
+
+meteo = random.choice([True, False])
+
+ostacoli:dict = {15:-3,30:-5, 45:-7}
+bonus:dict = {10:5,25:3, 50:10}
+
+
+
 def posizioni(posT, posL):
     percorso = ['_'] * 70
     
@@ -17,6 +27,7 @@ def posizioni(posT, posL):
 
 def tartaruga(posT):
     i = random.randint(1,10)
+    
     if 1 <= i <= 5:  
         posT += 3
 
@@ -58,10 +69,26 @@ def lepre(posL):
     return posL
 
 
-posT = 1
-posL = 1
 
-print("BANG !!!!! AND THEY'RE OFF !!!!!")
+def energiaStamina(posT, posL):
+
+    if meteo == False:  
+        posT -= 1
+        if posT < 1:
+            posT = 1
+
+        
+        posL -= 2
+        if posL < 1:
+            posL = 1
+    
+    return posT, posL
+
+
+
+print("BANG !!!!! AND THEY'RE OFF !!!!!") 
+
+secondi = 0
 
 
 while True: 
@@ -70,7 +97,23 @@ while True:
     posL = lepre(posL)
 
     posizioni(posT,posL)
+    
+    time.sleep(1)
+    
+    # controllo del meteo
 
+    secondi += 1  
+
+    if secondi == 10:
+
+        meteo = random.choice(["sole", "pioggia"])
+
+        print(f"Cambio meteo: {meteo}!")
+        secondi = 0 
+
+    if meteo == "pioggia":
+        posT -= 1
+        posL -= 2
 
     if posT >= 70 and posL >= 70:
         print("IT'S A TIE.")
@@ -84,4 +127,14 @@ while True:
         print("HARE WINS || YUCH!!!")
         break   
 
-    time.sleep(1)
+    # ostacoli e bonus
+
+    if posT in ostacoli:
+        posT += ostacoli[posT]
+        print("ops, ostacolo sulla pista !!!")
+
+
+    if posT in bonus:
+        posT += bonus[posT]
+        print("grande, hai ottenuto un bonus !")
+
