@@ -1,0 +1,36 @@
+html {
+    height: 100%;
+}
+
+
+body {
+    background-color: bisque;
+}
+
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: brown;
+}
+
+h2 {
+    text-decoration:overline;
+    text-transform: uppercase;
+
+}
+
+footer {
+    position: fixed;
+    height:150px;
+    margin-top: -150px;
+    }
+
+
+table {
+
+    border-radius: 20%;
+    text-decoration: dashed;
+    text-transform:uppercase;
+
+}
