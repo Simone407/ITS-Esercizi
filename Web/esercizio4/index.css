@@ -1,0 +1,31 @@
+
+body{
+    background-color: antiquewhite;
+}
+
+h1{
+    text-transform: uppercase;
+    text-align: center;
+    color: chocolate;
+}
+
+hr{
+    border-radius: 200px;
+    border-style: double;
+}
+
+
+.paragraph1{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 300px;
+    border: 10px rgb(228, 193, 79) solid;
+    border-radius: 60px;
+    margin-left: 400px; 
+    margin-right: 400px;
+}
+
+footer{
+    margin-top: 600px;
+    font-family: 'Times New Roman', Times, serif;
+}
