@@ -1,5 +1,11 @@
 body {
-    background-color: rgb(182, 219, 107);
+    background-color: rgb(205, 233, 149);
+}
+
+.sito{
+    background-color: aliceblue;
+    margin-left: 410px;
+    margin-right: 410px;
 }
 
 .img1 {
@@ -11,16 +17,14 @@ body {
 }
 
 table {
-  
-    display: flex;
     align-items: center;
     justify-content: center;
-    border:gray;
-    margin-top:20px;
     text-transform: uppercase;
-    text-decoration: solid ;
     font-family: Arial, sans-serif;
     background-color: gray;
+    margin: 4px;
+    margin-left: 410px;
+    
 }
 
 .img2 {
@@ -28,7 +32,7 @@ table {
     display: flex;
     align-items: left;
     justify-content: left;
-    margin-left: 422px;
+    margin-left: 410px;
     margin-top: 30px;
 }
 
@@ -72,7 +76,7 @@ table {
     display: flex;
     align-items: left;
     justify-content: left;
-    margin-left: 422px;
+    margin-left: 410px;
 }
 
 .img8 {
@@ -80,6 +84,6 @@ table {
     display: flex;
     align-items: left;
     justify-content: left;
-    margin-left: 422px;
+    margin-left: 410px;
     margin-top: 20px;
 }
