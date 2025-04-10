@@ -6,5 +6,16 @@ somma di partenza m.
 
 '''
 
-def compundInterest() ->:
+def compoundInterest(m:float,t:int) ->float:
     
+    if m < 0: 
+        return 0
+    
+    elif t == 0:
+        return m
+    
+    else: return (m * 1.005,t-1)
+
+
+print(compoundInterest(3200,12))
+

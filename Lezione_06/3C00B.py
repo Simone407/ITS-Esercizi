@@ -4,12 +4,12 @@ genere:str = input("inserisci il tuo genere (m o f): ")
 match genere:
 
     case ("f"):
-        print(f"{nome}, {genere}")
+        print(f"{nome}, femmina")
 
     case ("m"):
-       print(f"{nome}, {genere}")
+       print(f"{nome}, maschio")
 
     case _:
-        print(f"errore, non è possibile generare un documento di identità.")
+        print(f"Mi dispiace {nome}, non e' possibile procedere con la generazione di un documento di identità!")
 
 
