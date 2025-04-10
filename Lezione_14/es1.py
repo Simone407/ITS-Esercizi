@@ -16,5 +16,3 @@ def safe_sqrt(number:int):
         return("devi inserire un numero positivo")
    
 print(safe_sqrt(16))
-
-

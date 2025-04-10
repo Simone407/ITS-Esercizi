@@ -7,7 +7,7 @@ match voto:
 
     case 4|5:
         print("Insufficiente!")
-
+        
     case 6|7:
         print("Sufficiente!")
 
