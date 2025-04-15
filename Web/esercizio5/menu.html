@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menù</title>
+    <title>Ristorante - Menù</title>
 
     <style type="text/css">
 
@@ -20,6 +20,10 @@
 
         h2{
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-transform: uppercase;
+            color: brown;
+            text-align: center;
+            color: aliceblue;
         }
 
         h3{
@@ -36,12 +40,32 @@
         table{
             margin-top: 100px; 
             margin-left: 680px;
+            background-color: rgb(68, 2, 2);
         }
 
         a{
             text-decoration: none;
         }
         
+
+        button{
+            background-color:brown;
+            border-radius: 300px;
+            margin-left: 800px;
+            margin-top: 290px;
+        }
+
+        th{
+            color: aliceblue;
+        }
+
+        tr{
+            text-transform:capitalize;
+        }
+
+        td{
+            text-justify: auto;
+        }
     </style>
 
 </head>
@@ -50,8 +74,8 @@
 <h1>menù del giorno</h1>
 
 
-<table border="1">
-    <tr><th>NOME DEL PIATTO</th> <th>DESCRIZIONE</th><th>PREZZO</th></tr>
+<table border="4">
+    <tr><th>NOME DEL PIATTO</th> <th>DESCRIZIONE</th><th>PREZZO </th></tr>
     <tr style="background-color: aqua;"><td>Antipasto della casa</td><td>selezione tipica</td><td>€ 14</td></tr>
     <tr style="background-color: aqua;"><td>Focaccia con crudo</td><td>focaccia calda sfornata con crudo S.Daniele</td><td>€ 5</td></tr>
     <tr style="background-color: aqua;"><td>Polenta e fonduta</td><td>cubi di polenta fritta con formaggio</td><td>€ 8</td></tr>
@@ -71,7 +95,8 @@
     <tr style="background-color: rgb(59, 116, 223);"><td>Caffè</td><td>espresso italiano</td><td>€ 1</td></tr>
 </table>
 
-<a link href="index.html"><h3>torna alla home</h3></a>
+
+<button><a link href="index.html"><h2>torna alla home</h2></a></button> 
 
 
 </body>
