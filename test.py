@@ -1,6 +1,5 @@
-
-
 import re
+
 ############################  LAMBDA COME ARGOMENTO FUNZIONE ##########################################
 print ("########################################################################################################")
 names:list[str] = ['Alice', 'Bob', 'Charlie','Alex','Timothy','Klaus','Simon','James','Wallace']
