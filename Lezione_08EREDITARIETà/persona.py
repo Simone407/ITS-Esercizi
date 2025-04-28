@@ -45,3 +45,6 @@ class Persona:
 
     def getAge(self) -> int:
         return self.age
+
+    def speak(self) -> None:
+        print(f"Hello my name is {self.getName()} ! ")
