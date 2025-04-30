@@ -4,12 +4,7 @@ are typically stored in a user profile. Make a method called describe_user() tha
 Make another method called greet_user() that prints a personalized greeting to the user. Create several instances representing different users, 
 and call both methods for each user.
 
-
-
-
 '''
-
-
 class User():
 
 
