@@ -1,12 +1,6 @@
 
-
-
-
 for number in range(1, 21):
     print(number)
-
-
-
 
 pizzas:list[str] = ["diavola","patate e salsiccia","margherita"]
 
