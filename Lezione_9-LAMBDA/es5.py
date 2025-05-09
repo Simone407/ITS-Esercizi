@@ -3,4 +3,4 @@
 
 numero = lambda x: "numero paro" if x % 2 == 0 else "numero disparo"
 
-print(numero(4))
+print(numero(3))
