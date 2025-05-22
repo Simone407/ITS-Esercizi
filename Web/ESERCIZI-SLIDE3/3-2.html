@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="risultato"></div>
+    <div id="media"></div>
+    
+
+
+
+    <script>
+
+        var annoCorrente = 2025;
+        var annoNascita = 2005;
+
+        var eta = annoCorrente - annoNascita;
+        var anniPer100 = 100 - eta;
+
+        document.getElementById("risultato").innerHTML = "L'età della persona è di: " + eta + " anni.";
+        document.getElementById("media").innerHTML = "Gli anni necessari per raggiungere i 100 sono: " + anniPer100 + " anni.";
+        console.log("L'età della persona è: " + eta + " anni.");
+        console.log("Gli anni necessari per raggiungere i 100 sono: " + anniPer100 + " anni.");
+
+     
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>
