@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>ESERCIZIO 4.1</h1>
+    <div id="risultato"></div>
+   
+    <script>
+
+        var a = 6
+        var b = 1
+
+        while (b == 10) {
+            console.log(a * b);
+            document.getElementById("risultato").innerHTML += "La moltiplicazione tra  " + a + " * " + b + " è uguale a " + (a * b) + "<br>";
+            b++;
+        }
+        
+        for (x = 1; x <= 10; x++) {
+            console.log(a * x);
+            document.getElementById("risultato").innerHTML += a + " * " + x + " è uguale a " + (a * x) + "<br>";
+        }
+       
+    </script>
+
+
+</body>
+</html>
