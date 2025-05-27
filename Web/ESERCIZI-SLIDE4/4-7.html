@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <h1>ESERCIZIO 4.7</h1>
+    <div id="demo"></div>
+    <div id="risultato"></div>
+
+    <script>
+
+        var a = [21,43,1,32,56,32,48];
+        var grande = 0;
+
+        document.getElementById("demo").innerHTML = "[" + a + "]<br>";
+        
+        for (var i = 0; i < a.length; i++) {
+            if (a[i] > grande) {
+                grande = a[i];
+            }
+        }
+
+
+        document.getElementById("risultato").innerHTML += "Il numero più grande dell'Array è " + grande + "<br>";
+
+    </script>
+
+</body>
+</html>
