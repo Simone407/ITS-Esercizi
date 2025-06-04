@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<script>
+
+    // fase 1
+
+    let y = function() {
+        console.log("Fase 1");
+    }
+
+    // ARROW FUNCTION
+    // () => {}
+    // funzione viene chimata automaticamente ? 
+    // fase 2
+
+
+    let x = (test) => {
+        test()
+        console.log("Fase 2");
+    }
+
+
+
+
+    // 1 - paramentro è 1 solo .... le tonde non sono obligatorie
+    // 2 - il contenuto della funzione è solo un istruzione.... le graffe non sono obbligatorie... il return è implicito
+
+
+    x(y);
+
+
+    // arrow function vengono utilizzate nella maggior parte dei casi come  callback
+    // Callback... funzione che viene passata come parametro ad un'altra funzione
+    let giorni = ["Lunedi", "Martedi", "Mercoledi", "Giovedi", "Venerdi", "Sabato", "Domenica"];
+
+
+
+    for (let i = 0; i < giorni.length; i++) {
+        console.log(giorni[i]);
+    }
+
+
+
+    for (let giorno of giorni) {
+        console.log(giorno);
+    }
+
+
+    for (let indice in giorni){
+        console.log(giorni[indice]);
+    }
+
+
+
+    // forEach()  e map() sono metodi degli array che permette di iterare su ogni elemento dell'array
+
+    let ciclofor = giorni.forEach( giorno => console.log(giorno) );
+    let ciclomap = giorni.map (giorno => giorno + "pippo");
+
+    console.log(ciclofor);
+    console.log(ciclomap);
+
+    // JSX
+    // React utilizza JSX... è un'estensione di sintassi per JavaScript che permette di scrivere codice simile a HTML all'interno di JavaScript.
+
+
+
+</script>
+
+<h1>Esercizio 1</h1>
+    
+</body>
+</html>
