@@ -3,3 +3,35 @@ Specifica della classe Utente
 [V.Utente.bidDopoRegistrazione] Un utente non può avere bid prima di essere registrato.
 
 Per ogni u:Utente sia b:Bid tale che (b,u):bid_ut deve essere u.registrazione < b.istante.
+
+
+
+popolarità(I: DataOra): Popolarità
+	precondizioni:
+	postcondizioni:
+		- sia P l'insieme dei post pubblicati da this, formalmente: 
+			tutti i p:PostOggetto che partecipano a pubblica o priv_ou insieme a this. 
+		- sia Ucs l'insieme degli u:Privato tali che partecipano a cs_ut insieme ai p in P dove l'istante di cs_ut è minore o uguale a i. 
+		- sia Ua l'insieme degli u:Privato sia b:Bid tale che (b,u):bid_ut, deve essere che (b,p):asta_bdid dove p in P e b.istante <= i. 
+		- result = |Ucs| + |Ua|
+			
+
+
+
+affidabilità(I: DataOra): Reale in 0..1
+		precondizioni:
+			- Per ogni istanza a.Utente deve essere presente un link associazione pubblico tra this e p.PostconFeedback
+			- sia ft l'insieme degli oggetti f.postconfeedback che partecipano ad un link associazione (this, postconfeedback): Pubblica
+				o (this,postconfeedback ): Priv, l'insieme deve avere almeno un elemento
+			
+		postcondizioni: 
+			- L'operazione non modifica il livello estensionale dei dati
+			- sia z =  fn/ft 
+			- Sia m = media artimetica di tutte le istanze f.PostConFeedback di "this" (s/ft)
+			- Sia fn l'insieme di tutte le istanze di f.PostCOnFeedback di "this" tali che v.postconfeedback  <= 2
+			- result = m*(1-z)/5
+			- sia fn la cardinalità PFN
+			- sia ft la cardinalità di PF
+			
+			
+			

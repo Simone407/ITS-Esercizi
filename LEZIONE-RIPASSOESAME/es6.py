@@ -1,6 +1,6 @@
 
 
-for num in range (2,16,2):
+for num in range (2,15,2):
 
     print(num)
 
