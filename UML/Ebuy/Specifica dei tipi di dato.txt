@@ -1,3 +1,0 @@
-Specifica dei tipi di dato
-
-Condizione: {ottimo, buono, discreto, da sistemare}
