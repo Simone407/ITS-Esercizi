@@ -4,4 +4,4 @@ from typing import Callable
 
 quadrato:Callable[[int],int] = lambda x: x ** 2
 
-print(quadrato(4))
+print(quadrato(21))

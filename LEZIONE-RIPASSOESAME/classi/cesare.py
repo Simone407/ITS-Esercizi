@@ -19,6 +19,8 @@ def caesar_cypher_decrypt(s, key):
     pass
 
 
+
+
 for i in range(len(alfabeto)):
     print(alfabeto[i])
 
@@ -30,7 +32,7 @@ numbers = list(map(str, range(1, len(letters)+1)))
 let_to_num = dict(zip(letters, numbers))
 num_to_let = dict(zip(numbers, letters))
 
-x = input('Inserisci la lettera o il numero (1-26): ')
+x = input('Inserisci la lettera o il numero (a-z) (1-26): ')
 
 
 
