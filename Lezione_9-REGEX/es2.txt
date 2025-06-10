@@ -5,10 +5,12 @@
 
 
 
-import re
+#import re
+#text:str = "Ciao volare portofino portavalori"
+#print(result)
 
-text:str = "Ciao volare portofino portavalori"
+
+
+
 
 result = re.findall(r'[a-z]{5,10}', text)
-
-print(result)

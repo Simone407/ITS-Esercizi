@@ -9,7 +9,8 @@ Si scriva una funzione ricorsiva recursiveFactorial che dato un numero n calcoli
 
 '''
 
-def recursiveFactorial(n:int) -> int:
+
+def recursiveFactorial(n: int) -> int:
 
     if n < 0:
         return 0
@@ -17,9 +18,8 @@ def recursiveFactorial(n:int) -> int:
         return 1
     elif n == 0:
         return 1
-    else: 
+    else:
         return n * recursiveFactorial(n-1)
-    
+
 
 print(recursiveFactorial(5))
-

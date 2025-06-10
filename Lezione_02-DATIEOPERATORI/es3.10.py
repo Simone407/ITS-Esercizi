@@ -1,4 +1,5 @@
-languages: list = ["italiano","inglese","spagnolo","francese","greco","russo"]
+languages: list = ["italiano", "inglese",
+                   "spagnolo", "francese", "greco", "russo"]
 
 print(languages)
 
@@ -16,7 +17,7 @@ print(languages)
 
 print(languages)
 print(sorted(languages))
-print(sorted(languages, reverse= True))
+print(sorted(languages, reverse=True))
 languages.reverse()
 print(languages)
 languages.reverse()

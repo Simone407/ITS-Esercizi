@@ -12,13 +12,12 @@ dunque, dividere n per 10 per rimuovere l'ultima cifra e richiama ricorsivamente
 '''
 
 
-
-def recursiveDigitCounter (n:int) -> int:
+def recursiveDigitCounter(n: int) -> int:
 
     if n < 10:
-        return("il numero ha solo una cifra")
-    elif n > 10: 
-        return("il numero ha due cifre")
-    
-    else: 
-        return 
+        return ("il numero ha solo una cifra")
+    elif n > 10:
+        return ("il numero ha due cifre")
+
+    else:
+        return
