@@ -1,4 +1,4 @@
-names:list = ["ale","flavio","andrea","stefano","matteo"] 
+names: list = ["ale", "flavio", "andrea", "stefano", "matteo"]
 
 print(names[0])
 print(names[1])
