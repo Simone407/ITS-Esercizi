@@ -21,28 +21,29 @@ prezzo(i: DataOra): Reale >= 0
 		- result = N * this.prezzo_bid + this.prezzo
 
 
-
 conclusa(): Booleano
-	precondizioni:
+	precondizioni: nessuna.
 	postcondizioni:
-		- Non ha side effect
-		- se this.scadenza <= adesso result è True
-		- altrimenti result è falso
-		
+		- Non ha side effect.
+		- Se this.scadenza <= adesso result è true.
+		- Altrimenti result è flase.
 
-ultimo_bid():
-	precondizioni:
+
+ultimo_bid(): Bid[0..1]
+	precondizioni: nessuna.
 	postcondizioni:
 		- Non ha side effect
-		- sia B l'insieme b:bid coinvolti in un link asta_bid di associazione tra b e this, prendo solo i b.istante <= adesso
-		- result è il bid in B dell'insieme B con valore dell'attributo istante maggiore
-		
-		
-	
-vincitore(): Utente[0..1]
-	precondizioni: il risultato dell'operazione this.conclusa deve essere True
+		- Sia B l'insieme dei b:Bid coinvolti in un link asta_bid di associazione tra b e this, prendo solo i b.istante <= adesso.
+		- result è il bid nell'insieme B con valore dell'attributo istante maggiore.
+
+
+vincitore(): Privato[0..1]
+	precondizioni: il risultato dell'operazione this.conclusa() deve essere true.
 	postcondizioni:
-		- Non ha side effect
-		- b = this.ultimo_bid() 
-		- result è p:Privato coinvolto nel link bid_ut di associazione con b 
-	
+		- Non ha side effect.
+		- b = this.ultimo_bid()
+		- result è p:Privato coinvolto nel link bid_ut di associazione con b.
+
+
+
+

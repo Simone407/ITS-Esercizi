@@ -14,7 +14,7 @@ Raffinamento dei requisiti
 		1.6.2. I post pubblicati (v.req. 2)
 		1.6.3. Popolarità, calcolata come: numero di utenti che hanno effettuato bid sulle loro aste negli ultimi 12 mesi + utenti che hanno acquistato post di tipo "CompraloSubito" negli ultimi 12 mesi. Può essere bassa se < 50, media se tra 50 e 300 e alta se > 300.
 		1.6.4. L'affidabilità, calcolata come:
-			1.6.4.1. Sia m = media artimetica dei feedback ricevuti, sia z = fp/ft (fp = insieme dei feedback positivi e ft = insieme dei feedback totali), affidabilità = m*(1-z)/5 (quindi sempre tra 0 e 1)
+			1.6.4.1. Sia m = media artimetica dei feedback ricevuti, sia z = fn/ft (fn = insieme dei feedback negativi (voto <= 2) e ft = insieme dei feedback totali), affidabilità = m*(1-z)/5 (quindi sempre tra 0 e 1)
 
 2. Dei post interessa:
 	2.1. Descrizione
@@ -57,3 +57,9 @@ Raffinamento dei requisiti
 	999.1. Agli utenti deve permettere di pubblicare post per oggetti in vendita con o senza asta.
 	999.2. Agli utenti deve permettere di proporre bid alle aste oppure acquistare post "Compralo Subito"
 	999.3. Agli utenti vincitori di un'asta o che hanno acquistato un oggetto in modalita "CompraloSubito" deve permettere di lasciare un feedback al post
+	999.4. Agli utenti non registrati, di registrarsi.
+	999.5. Agli amministatori, di creare categoria.
+	999.6. Agli amministratori, di eliminare post offensivi.
+	999.7. Agli amministratori, di eliminare utenti.
+	999.8. Agli amministratori, di aggiungere metodi di pagamento.
+	999.9. Agli utenti, di calcolare l'affidabilita e la popolarita di altri utenti.

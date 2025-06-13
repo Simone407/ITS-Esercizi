@@ -45,7 +45,7 @@ Formale:
 Per ogni f:PostConFeedback:
 	- Se f:CompraloSubito, sia p:Privato, deve esistere (f,p):cs_ut.
 	- Se f:Asta:
-		- f.scadenza > adesso
+		- conclusa()
 		- esiste b:Bid tale che (b,f):asta_bid
 
 
