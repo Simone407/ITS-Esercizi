@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import Componente1 from './Componente1';
 import Clock from './Clock';
+import { anagrafica } from './Dati/dati';
+import Stampanumeri from './ESERCIZIO3/Stampanumeri';
+import Tabellina from './ESERCIZIO2/Tabellina';
 
 /*
 
@@ -18,7 +21,17 @@ function App() {
 
     <h1>Prima app React {nome}</h1> 
 
-    <Componente1> Pippo</Componente1>
+    <Stampanumeri></Stampanumeri>
+    <Tabellina moltiplicatore="5"></Tabellina>
+
+
+    {
+          anagrafica.map((p)=>{
+            return  <Componente1 key={p.id} {...p}/>
+
+          })
+        }
+
 
     <img src={logo} className="App-logo" alt="logo" />
     
