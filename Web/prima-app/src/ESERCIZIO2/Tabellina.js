@@ -14,14 +14,11 @@ const Tabellina = () => {
           {
             num.map((i)=>{
 
-                
-            
+          
                 return i
                   
   
               })
-
-
     
           
           }

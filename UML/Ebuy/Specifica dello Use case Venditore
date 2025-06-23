@@ -1,0 +1,12 @@
+Specifica dello use case Statistiche Venditori
+
+
+calcola_affidabilita(u:Utente): Reale in 0..1
+
+	precondizioni:
+	postcondizioni:
+
+calcola_popolarita(u:Utente): Popolarita
+	
+	precondizioni:
+	postcondizioni:
