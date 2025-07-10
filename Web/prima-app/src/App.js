@@ -5,6 +5,9 @@ import Clock from './Clock';
 import { anagrafica } from './Dati/dati';
 import Stampanumeri from './ESERCIZIO3/Stampanumeri';
 import Tabellina from './ESERCIZIO2/Tabellina';
+import Cleanup from './CleanUp';
+import Form from './Form';
+
 
 /*
 
@@ -23,6 +26,9 @@ function App() {
 
     <Stampanumeri></Stampanumeri>
     <Tabellina moltiplicatore="5"></Tabellina>
+
+    <Cleanup></Cleanup>
+    <Form></Form>
 
 
     {
