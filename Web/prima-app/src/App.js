@@ -7,7 +7,8 @@ import Stampanumeri from './ESERCIZIO3/Stampanumeri';
 import Tabellina from './ESERCIZIO2/Tabellina';
 import Cleanup from './CleanUp';
 import Form from './Form';
-
+import CambiaNome from './CambiaNome';
+import LoginForm from './loginform';
 
 /*
 
@@ -29,7 +30,8 @@ function App() {
 
     <Cleanup></Cleanup>
     <Form></Form>
-
+    <CambiaNome></CambiaNome>
+    <LoginForm></LoginForm>
 
     {
           anagrafica.map((p)=>{
