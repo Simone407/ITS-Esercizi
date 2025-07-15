@@ -10,8 +10,7 @@ const Form = () => {
         e.preventDefault();        
     }
 
-
-    
+ 
 
 return (
     <div className="container">
