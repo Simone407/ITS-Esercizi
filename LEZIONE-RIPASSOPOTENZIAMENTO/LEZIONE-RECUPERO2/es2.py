@@ -55,20 +55,15 @@ if __name__ == "__main__":
         if n == 0:
             break
     
-    # mostrare i risultati
 
-    # stampare la lista
     print("Hai inserito la sequenza: ", *seq)
 
-    # stampare le occorrenze di x
     if occ == 1:
         print(f"Il numero {x} compare {occ} volta nella sequenza!")
     else:
         print(f"Il numero {x} compare {occ} volte nella sequenza!")
     
-    # stampare la posizione della prima occorrenza di x
-    print(f"Il numero {x} compare per la prima volta in posizione {pos} nella sequenza")
+    print(f"Il numero {x} compare per la prima volta in posizione {pos + 1} nella sequenza")
 
-    # stampare la somma dei numeri diversi da x:
-    print(f"La somma dei numeri diversi da x e' {somma}")
+    print(f"La somma dei numeri diversi da {x} e' {somma}")
     
