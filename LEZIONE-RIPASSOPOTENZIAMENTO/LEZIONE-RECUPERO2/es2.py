@@ -7,11 +7,9 @@ def insertValidNumber() -> int:
     x: int
 
     
-    # controlla se il numero inserito è valido 
     while True:
 
         try:
-            # in questo modo posso considerare validi interi espressi come float, ad esempio 3.0
             x = float(input("Inserisci un numero intero positivo: "))
             if isValid(x):
                 break
@@ -30,7 +28,7 @@ if __name__ == "__main__":
     seq: list[int] = []
     somma: int = 0
 
-    print("Digitare Sequenza!")
+    print("Digitare la sequenza di numeri!")
     # inserire una sequenza di numeri interi positivi che termina con 0
     while True:
         # digitare un numero valido
