@@ -11,45 +11,50 @@ Se ci sono più nomi con la stessa lunghezza massima, puoi scegliere uno qualsia
 
 '''
 
-
-while True:
-    str1 = str(input("Scegli il nome di una persona: "))
-    str2 = str(input("Scegli il nome di una persona: "))
-    str3 = str(input("Scegli il nome di una persona: "))
-    str4 = str(input("Scegli il nome di una persona: "))
-    str5 = str(input("Scegli il nome di una persona: "))
+nomi: list[str] = []
+print("----------------")
+print("Inserisci nomi di persone,\nPer terminare digita fine oppure un nome già inserito")
+print("----------------")
 
 
+while len(nomi) < 30:
+    user_input = input("Scegli il nome di una persona: ")
 
-    nomi:list[str] = [str1,str2,str3,str4,str5]
+    if user_input.lower() == "fine":
+        break
+    if user_input == "":
+        break
+    if user_input in nomi:
+        break
 
-    seq: list[str] = []
+    nomi.append(user_input)
+    print("----------------")
+    print("Lista Nomi:", nomi)
 
-    seq.append(nomi)
-
-
-
-    # for i in range(nomi):   
-
-    #     if nomi[i] == nomi[i] or len(nomi) > 30 :
-
-        
-         
-    #         break
-            
-    #     if len(nomi[i] >= 20):
-    #         break
-
-        
-    nomegrande = nomi[0]
-
-    for nome in nomi[1:]:
-        if len(nome) > len(nomegrande):
-            nomegrande = nome
+nomegrande = nomi[0]
 
 
-    print("Il numero di nomi inseriti sono: ", len(nomi))
+for nome in nomi[1:]:
+    if len(nome) > len(nomegrande):
+        nomegrande = nome
 
-    print("Hai inserito i seguenti nomi: ", *seq)
+seq: list[str] = []
+seq.append(nomi)
 
-    print(f"il nome più lungo della lista è  {nomegrande} con {len(nomegrande)} caratteri")
+
+print("----------------")
+
+
+print("Il numero di nomi inseriti sono: ", len(nomi))
+
+print("----------------")
+
+print("Hai inserito i seguenti nomi: ", *seq)
+
+print("----------------")
+
+print(
+    f"il nome più lungo della lista è  {nomegrande} con {len(nomegrande)} caratteri")
+
+
+print("----------------")

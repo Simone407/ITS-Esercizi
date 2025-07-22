@@ -17,43 +17,37 @@ Suggerimento: usare la funzione replace() per sostituire gli spazi con una strin
 '''
 
 
-
-
-
-
-
 def recursivePalindrome(a: str):
 
     x: str = ""
     is_palindrome = True
 
-    b = a.lower()
-    b = a.replace(" ",x)
+    b = a.lower().replace(" ", x)
 
-
-    if  b == a[::-1]:
-        return  is_palindrome
+    if b == b[::-1]:
+        return is_palindrome
 
     else:
         is_palindrome = False
 
     return is_palindrome
 
+
+print("----------------")
+
 print("ciao come va?: ", recursivePalindrome("ciao come va?"))
 
 print("----------------")
 
-print("radar: ",recursivePalindrome("radar"))
-print("Anna: ",recursivePalindrome("Anna"))
-print("i topi non avevano nipoti: ",recursivePalindrome("I topi non avevano nipoti"))
+print("radar: ", recursivePalindrome("radar"))
+print("Anna: ", recursivePalindrome("Anna"))
+print("i topi non avevano nipoti: ",
+      recursivePalindrome("I topi non avevano nipoti"))
 
 print("----------------")
 
-print("Marta: ",recursivePalindrome("Marta"))
-print("Roma e Amore: ",recursivePalindrome("Roma e Amore"))
-print("Casa: ",recursivePalindrome("Casa"))
+print("Marta: ", recursivePalindrome("Marta"))
+print("Roma e Amore: ", recursivePalindrome("Roma e Amore"))
+print("Casa: ", recursivePalindrome("Casa"))
 
-
-
-
-
+print("----------------")
