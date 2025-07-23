@@ -6,21 +6,21 @@ const Clock = (props) => {
   const [date, setDate] = useState(dateInit);
 
 
-useEffect(()=>{
-  setTimeout(() => {
+  useEffect(() => {
+    setTimeout(() => {
 
-      const t = date.getTime()+ 1000;
+      const t = date.getTime() + 1000;
       setDate(new Date(t));
 
 
-    },1000);
+    }, 1000);
 
 
 
 
-},[date]);
+  }, [date]);
 
-  
+
 
   return (
     <h3>in {props.country} sono le {date.toLocaleDateString() + " " + date.toLocaleTimeString()}</h3>

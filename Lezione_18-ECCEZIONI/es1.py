@@ -5,8 +5,7 @@ Handle ValueError if the input is negative by returning an informative message.
 
 import math
 
-
-    #       VERSIONE SENZA INPUT 
+#       VERSIONE SENZA INPUT
 
 
 # def safe_sqrt(number:int):
@@ -16,25 +15,21 @@ import math
 
 #     except ValueError:
 #         return("devi inserire un numero positivo")
-   
+
 # print(safe_sqrt(16))
 
+#       VERSIONE CON INPUT
 
-
-
-
-
-   #       VERSIONE CON INPUT 
-
-def safe_sqrt2(a = int(input("inserisci il numero: "))):
+def safe_sqrt2(a=int(input("inserisci il numero: "))):
 
     try:
-        
+
         radice = math.sqrt(a)
-        
+
         return radice
 
     except ValueError:
-        return("devi inserire un numero positivo")
-   
+        return ("devi inserire un numero positivo")
+
+
 print(safe_sqrt2())

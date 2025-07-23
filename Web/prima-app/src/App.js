@@ -23,36 +23,36 @@ function App() {
   return (
     <div className="App">
 
-    <h1>Prima app React {nome}</h1> 
+      <h1>Prima app React {nome}</h1>
 
-    <Stampanumeri></Stampanumeri>
-    <Tabellina moltiplicatore="5"></Tabellina>
+      <Stampanumeri></Stampanumeri>
+      <Tabellina moltiplicatore="5"></Tabellina>
 
-    <Cleanup></Cleanup>
-    <Form></Form>
-    <CambiaNome></CambiaNome>
-    <LoginForm></LoginForm>
+      <Cleanup></Cleanup>
+      <Form></Form>
+      <CambiaNome></CambiaNome>
+      <LoginForm></LoginForm>
 
-    {
-          anagrafica.map((p)=>{
-            return  <Componente1 key={p.id} {...p}/>
+      {
+        anagrafica.map((p) => {
+          return <Componente1 key={p.id} {...p} />
 
-          })
+        })
+      }
+
+
+      <img src={logo} className="App-logo" alt="logo" />
+
+      <h2>
+        {
+
+          new Date().toLocaleDateString() + "" + new Date().toLocaleTimeString()
+
         }
-
-
-    <img src={logo} className="App-logo" alt="logo" />
-    
-    <h2>
-    {
-
-      new Date().toLocaleDateString()+ "" + new Date().toLocaleTimeString()
-
-    }
-    </h2>
-    <Clock timezone="1" country="ITALY"></Clock>
-    <Clock timezone="4" country="USA"></Clock>
-    <Clock timezone="8" country="JAPAN"></Clock>
+      </h2>
+      <Clock timezone="1" country="ITALY"></Clock>
+      <Clock timezone="4" country="USA"></Clock>
+      <Clock timezone="8" country="JAPAN"></Clock>
     </div>
 
   );
