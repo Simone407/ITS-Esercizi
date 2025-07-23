@@ -1,12 +1,12 @@
 def isValid(x: int) -> bool:
-    # verifica se x è un istanza di int o float e nel caso in cui sia float, usa la funzione is_integer() dei float, ovvero 
+    # verifica se x è un istanza di int o float e nel caso in cui sia float, usa la funzione is_integer() dei float, ovvero
     # verifica che x sia un numero intero ma scritto come float (ovvero 3.0) e, infine, verifica se x sia >=0
-    return ( isinstance(x, int) or (isinstance(x, float) and x.is_integer()) ) and x >= 0
+    return (isinstance(x, int) or (isinstance(x, float) and x.is_integer())) and x >= 0
+
 
 def insertValidNumber() -> int:
     x: int
 
-    
     while True:
 
         try:
@@ -17,8 +17,9 @@ def insertValidNumber() -> int:
                 print("Il numero inserito non è valido!")
         except ValueError:
             print("Devi inserire un numero intero! Riprova!")
-        
+
     return int(x)
+
 
 if __name__ == "__main__":
 
@@ -37,22 +38,20 @@ if __name__ == "__main__":
         # se il numero è valido aggiungerlo alla lista seq.
         seq.append(n)
 
-        # aggiorniamo le occorrenze di x 
-        if n == x :
+        # aggiorniamo le occorrenze di x
+        if n == x:
             occ += 1
             # salviamo la posizione della prima occorrenza di x
             if occ == 1:
                 pos = seq.index(n)
-        
-       
+
         # sommiamo tutti i numeri diversi da x
         else:
             somma = somma + n
-        
+
         # se il numero inserito è 0 termina la sequenza
         if n == 0:
             break
-    
 
     print("Hai inserito la sequenza: ", *seq)
 
@@ -60,8 +59,8 @@ if __name__ == "__main__":
         print(f"Il numero {x} compare {occ} volta nella sequenza!")
     else:
         print(f"Il numero {x} compare {occ} volte nella sequenza!")
-    
-    print(f"Il numero {x} compare per la prima volta in posizione {pos + 1} nella sequenza")
+
+    print(
+        f"Il numero {x} compare per la prima volta in posizione {pos + 1} nella sequenza")
 
     print(f"La somma dei numeri diversi da {x} e' {somma}")
-    
