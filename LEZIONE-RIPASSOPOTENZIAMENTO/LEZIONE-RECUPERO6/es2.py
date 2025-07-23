@@ -42,7 +42,7 @@ seq: list[str] = []
 seq.append(nomi)
 
 
-print("----------------")
+print("----------------------------------------------------")
 
 
 print("Il numero di nomi inseriti sono: ", len(nomi))
@@ -56,5 +56,4 @@ print("----------------")
 print(
     f"il nome più lungo della lista è  {nomegrande} con {len(nomegrande)} caratteri")
 
-
-print("----------------")
+print("----------------------------------------------------")
