@@ -1,0 +1,38 @@
+
+
+-------per entrare da cmd nel db postgres
+
+
+
+docker exec -it its_postgresql bash
+
+psql -U postgres
+
+
+-------SI È DENTRO, PER ENTRARE IN UN db
+
+------- SE SI DEVE CREARE IL DB:
+
+
+CREATE DATABASE NOME_DB;
+
+
+
+-------- SE GIÀ CREATO:
+
+\c NOME_DB  ;
+
+--------
+
+begin transaction ;
+
+
+-------- SI PUÒ LAVORARE INSERENDO DATI O TABELLE
+
+-------- PER VEDERE LE TABELLE GRAFICHE ANDARE SU SCHEMAS/TABLES --> VIEW/EDIT DATA ----> ALL ROWS
+
+-------- SU PGADMIN SELEZIONARE IL DB E ANDARE SU TOOLS / QUERY TOOL PER FARE LE QUERY 
+
+--------- PER USCIRE
+
+exit 
