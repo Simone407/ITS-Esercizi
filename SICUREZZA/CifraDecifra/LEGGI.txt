@@ -1,0 +1,35 @@
+INSERIRE IN QUESTA CARTELLA alice.txt e l altro file. 
+
+COMANDI PROVA PER ALICE.TXT 
+
+
+
+
+head alice.txt per le prime 10 righe di un file
+
+cat alice.txt
+
+
+head -n 3 alice.txt 
+
+head -n -3 alice.txt 
+
+
+
+wc alice.txt MOSTRA LE RIGHE DI UN FILE
+
+tail alice.txt LE ULTIME RIGHE DEL FILE
+
+
+tail -n 2 alice.txt PER LE ULTIME DUE RIGHE DEL FILE
+
+tail -n -3 alice.txt MOSTRA TUTTO TRANNE LE ULTIME RIGHE DEL FILE
+
+
+tail -n 99 alice.txt PRENDE TUTTO DOPO LE 99 RIGHE
+
+
+tail -n -99 alice.txt | head -n 1    PER UNA SPECIFICA RIGA DEL FILE
+
+
+head -c 5 PER VEDERE SOLO LE PRIME 5 PAROLE DEL FILE
