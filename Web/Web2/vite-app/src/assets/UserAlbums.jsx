@@ -1,19 +1,29 @@
-import React, { useEffect, useState } from "react";
+// creare interfaccia che permette di scegliere un utente,
+// che filtra gli albums e tramite selezioni di questi ultimi appaiono le foto
+// passo 1: valorizzare la select con gli users
+
+
+import { useEffect } from "react";
+import { useState } from "react";
 
 
 const urlUsers = "https://jsonplaceholder.typicode.com/users";
-const urlAlbums = "https://jsonplaceholder.typicode.com/albums";
-const urlPhotos = "https://jsonplaceholder.typicode.com/photos";
+const urlAlbums="https://jsonplaceholder.typicode.com/albums";
+//const urlPhotos="https://jsonplaceholder.typicode.com/photos";
 
 
-const UserAlbumsFullStack = () => {
+const UserAlbums = () => {
   const [users, setUsers] = useState([]);
   const [userSelected, setUserSelected] = useState(0);
 
-  const [albums, setAlbums] = useState([]);
-  const [albumSelected, setAlbumSelected] = useState(0);
 
-  const [photos, setPhotos] = useState([]);
+  const [albums,setAlbums]=useState([]);
+  const [albumSelected,setAlbumSelected]=useState(0)
+//useState Photos
+
+
+
+
 
 
   const getUsers = async () => {
@@ -26,80 +36,50 @@ const UserAlbumsFullStack = () => {
     }
   };
 
-  const getAlbums = async () => {
-    try {
-      const url = urlAlbums + "?userId=" + userSelected;
 
-
+  const getAlbums=async ()=>{
+    try{
+      const url=  urlAlbums+"?userId="+userSelected ;
       const response = await fetch(url);
       const result = await response.json();
       setAlbums(result);
-    } catch (err) {
-      console.log(err);
+    }catch(err){
+      console.log(err)
     }
-  };
-
-  const getPhotos = async () => {
-    try {
-      const url = urlPhotos + "?albumId=" + albumSelected;
-      const response = await fetch(url);
-      const result = await response.json();
-      setPhotos(result);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  }
   useEffect(() => {
     getUsers();
+   
+
+
+    /*fetch(urlUsers)
+        .then(res=>res.json())
+        .then(ris=>setUsers(ris))
+        .catch(err=>console.log(err))*/
   }, []);
 
 
-  useEffect(() => {
-    if (userSelected) {
-      getAlbums();
-    } else {
-      setAlbums([]);
+  useEffect(()=>{
+    console.log("Carico albums")
+
+
+    if(userSelected){
+        getAlbums()
+    }else{
+      setAlbums([])
     }
-  }, [userSelected]);
-
-
-  useEffect(() => {
-    if (albumSelected) {
-      getPhotos();
-    } else {
-      setPhotos([]);
-    }
-  }, [albumSelected]);
-
-
-  const manageUser = (e) => {
-    setUserSelected(e.target.value);
-    setAlbumSelected(0);
-  };
-
-
-
-  const Opt=({id,name,userId,title}) =>{
-
-    const selectedValue = id=== (userId ? albumSelected : userSelected);
-    const optName = userId ? title : name;
-    return (<option value={id} defaultValue={selectedValue}>{optName}</option>)
-
-  }
-
+  },[userSelected])
   return (
     <div className="container">
-      <h1>Gestione albums e photos</h1>
+      <h1>Gestione albums photos</h1>
       <div className="row">
         <div className="col-6">
           <select
             className="form-select"
             value={userSelected}
-            onChange={manageUser}
+            onChange={(e) => setUserSelected(e.target.value)}
           >
-            <option value="">Seleziona Utente</option>
-
-
+            <option value="0">Seleziona utente</option>
             {users.map((u) => {
               return (
                 <option key={u.id} value={u.id}>
@@ -109,40 +89,29 @@ const UserAlbumsFullStack = () => {
             })}
           </select>
         </div>
-
-
         <div className="col-6">
-          <select
-            className="form-select"
-            value={albumSelected}
-            onChange={(e) => setAlbumSelected(e.target.value)}
-          >
-            <option value="0">Seleziona album</option>
-            {albums.map((u) => {
-              return (
-                <option key={u.id} value={u.id}>
-                  {u.title}
-                </option>
-              );
-            })}
-          </select>
+            <select  className="form-select"
+             value={albumSelected}
+            onChange={(e) => setAlbumSelected(e.target.value)}>
+                <option value="0">Seleziona l'album</option>
+                {
+                  albums.map((a)=>{
+                    const {id,title}=a
+                    return <option key={id} value={id}>{title}</option>
+                  })
+                }
+            </select>
         </div>
       </div>
-
-
       <div className="row">
         <div className="col-12">
-          {photos.map((u) => {
-              return (
-                <p key={u.id} value={u.id}>
-                  <span>{u.title}</span>
-                </p>
-              );
-            })}
+
+
         </div>
       </div>
     </div>
   );
 };
 
-export default UserAlbumsFullStack;
+
+export default UserAlbums;
