@@ -45,7 +45,7 @@ create table AttivitaProgetto (
 create table AttivitaNonProgettuale (
   id int check (id >= 0) PRIMARY KEY,
   persona int NOT NULL,
-  tipo LavoroNonProgettuale NOT NULL,
+  tipo LavoroNonProgettuale NOT NULL,7881
   giorno date NOT NULL,
   oreDurata int check (oreDurata >= 0 AND oreDurata <= 8) NOT NULL,
   FOREIGN KEY (persona) REFERENCES Persona(id)
