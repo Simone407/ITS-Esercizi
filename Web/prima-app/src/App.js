@@ -9,7 +9,8 @@ import Cleanup from './CleanUp';
 import Form from './Form';
 import CambiaNome from './CambiaNome';
 import LoginForm from './loginform';
-
+import Saluto from './EserciziAGOSTO/es1/Saluto';
+import CardUtente from './EserciziAGOSTO/es2/CardUtente';
 /*
 
 function getDate(date){
@@ -24,14 +25,38 @@ function App() {
     <div className="App">
 
       <h1>Prima app React {nome}</h1>
+      <Saluto></Saluto>
+      
+
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+    <CardUtente 
+        nome="Mario Rossi" 
+        email="mario.rossi@email.com" 
+        imgUrl="https://placehold.co/250x150" 
+      />
+    <CardUtente 
+        nome="Luca Bianchi" 
+        email="luca.bianchi@email.com" 
+        imgUrl="https://placehold.co/250x150" 
+      />
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+
+
+
 
       <Stampanumeri></Stampanumeri>
       <Tabellina moltiplicatore="5"></Tabellina>
-
       <Cleanup></Cleanup>
       <Form></Form>
       <CambiaNome></CambiaNome>
       <LoginForm></LoginForm>
+      
 
       {
         anagrafica.map((p) => {
