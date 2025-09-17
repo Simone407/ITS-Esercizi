@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import UserAlbums from './assets/UserAlbums'
 import UserCrud from '../UserCrud'
+import Saluto from '../../../prima-app/src/EserciziAGOSTO/es1/Saluto'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
     <UserCrud></UserCrud>
+  
     </>
 
   )
