@@ -387,70 +387,139 @@
 
 
 
-class Book:
+# class Book:
 
-    def __init__(self,book_id: str,title:str,author: str,is_borrowed: bool):
+#     def __init__(self,book_id: str,title:str,author: str,is_borrowed: bool):
 
-        self.book_id = book_id
-        self.title = title
-        self.author = author
-        self.is_borrowed = is_borrowed
+#         self.book_id = book_id
+#         self.title = title
+#         self.author = author
+#         self.is_borrowed = is_borrowed
 
     
-    def borrow(self):
-        self.is_borrowed = True
+#     def borrow(self):
+#         self.is_borrowed = True
 
-    def return_book(self):
+#     def return_book(self):
         
-        self.is_borrowed = False
+#         self.is_borrowed = False
 
 
-class Member:
+# class Member:
     
-    def __init__(self,member_id: str, name: str, borrowed_books: list[Book]):
+#     def __init__(self,member_id: str, name: str, borrowed_books: list[Book]):
 
-        self.member_id = member_id
-        self.name = name
-        self.borrowed_books = borrowed_books
+#         self.member_id = member_id
+#         self.name = name
+#         self.borrowed_books = borrowed_books
 
-    def borrow_book(self,book):
+#     def borrow_book(self,book):
         
-        if not self.borrowed_books:
-            self.borrowed_books(book)
+#         if not self.borrowed_books:
+#             self.borrowed_books(book)
 
-    def return_book(self,book):
+#     def return_book(self,book):
         
-        self.borrowed_books.remove(book)
+#         self.borrowed_books.remove(book)
 
 
-class Library:
+# class Library:
 
-    def __init__(self,books: dict[str, Book],members: dict[str, Member],):
+#     def __init__(self,books: dict[str, Book],members: dict[str, Member],):
         
-        self.books = books
-        self.members = members
+#         self.books = books
+#         self.members = members
 
     
-    def add_book(self,book_id: str, title: str, author: str): 
+#     def add_book(self,book_id: str, title: str, author: str): 
 
-        new_book = Book(book_id,title,author)
-        self.books[book_id] = new_book
+#         new_book = Book(book_id,title,author)
+#         self.books[book_id] = new_book
 
 
-    def register_member(self,member_id:str, name: str):
+#     def register_member(self,member_id:str, name: str):
 
-        new_member = Member(member_id,name)
-        self.members[member_id] = new_member
+#         new_member = Member(member_id,name)
+#         self.members[member_id] = new_member
 
-    def borrow_book(self,member_id: str, book_id: str): 
+#     def borrow_book(self,member_id: str, book_id: str): 
 
-        self.borrow_book(member_id,book_id)
-
-    
-
-    def return_book(self,member_id: str, book_id: str):
-
-        self.return_book(member_id,book_id)
+#         self.borrow_book(member_id,book_id)
 
     
-    def get_borrowed_books(self,member_id): list[Book]
+
+#     def return_book(self,member_id: str, book_id: str):
+
+#         self.return_book(member_id,book_id)
+
+    
+#     def get_borrowed_books(self,member_id): list[Book]
+
+
+
+# def conta_parole (lista: list[str]) -> dizionario: dict = {str,int}:
+
+#     for i in lista
+
+
+
+
+#############################################################
+
+# def tuple_a_dizionario(lista):
+#     d = {}
+
+#     for chiave, valore in lista:
+#         if chiave in d:
+#             d[chiave] = d[chiave] + valore
+#         else:
+#             d[chiave] = valore
+
+#     return d
+
+#############################################################
+
+# def classifica_numeri(numeri):
+
+#     d = {"positivi": [], "negativi": []}
+
+#     for num in numeri:
+#         if num >= 0:
+#             d["positivi"].append(num)
+#         else:
+#             d["negativi"].append(num)
+    
+#     return d
+
+#############################################################
+# def filtra_prezzi(prodotti):
+#     ris = []
+
+#     for nome,prezzo in prodotti.items():
+#         if prezzo < 50:
+#             nuovo_prezzo = prezzo * 1.10
+#             nuovo_prezzo = round(nuovo_prezzo,2)
+#             ris[nome] = nuovo_prezzo
+    
+#     return ris
+#############################################################
+
+# def verifica(x,y,z):
+
+#     if x and (y or z):
+#         return "Azione permessa"
+#     else:
+#         return "Azione negata"
+
+###############################################################
+
+
+def ordina_numeri(lista:list[int]):
+
+    new_lista:list = []
+
+    for num in range(len(lista)):
+
+        if num > lista(num):
+
+            
