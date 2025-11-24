@@ -8,7 +8,6 @@
 </head>
 <body>
     
-    <!-- mandare a video i dati del post dell'endpoint-->
 
     <div class="prova">
         <script>const url="https://jsonplaceholder.typicode.com/posts/1";
@@ -24,3 +23,16 @@
     </div>
 </body>
 </html>
+
+
+
+
+
+
+<select id="modello" className="form-select" disabled={!marca}>
+    <option value="">Seleziona modello</option>
+
+    {modelli.map((m, index) => (
+      <option key={index} value={m}>{m}</option>
+    ))}
+  </select>

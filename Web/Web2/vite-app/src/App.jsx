@@ -1,21 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import UserAlbums from './assets/UserAlbums'
-import UserCrud from '../UserCrud'
-import Saluto from '../../../prima-app/src/EserciziAGOSTO/es1/Saluto'
-import todoApp from '../todolist/todoApp'
+import TodoModel from '../todolist/todoModel'  
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <todoApp></todoApp>
-  
-    </>
-
+    <TodoModel/>   
   )
 }
 
