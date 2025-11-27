@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "terzo",
+            "request": "launch",
+            "mainClass": "terzo",
+            "projectName": "esercizi_b234545f"
+        },
+        {
+            "type": "java",
+            "name": "secondo",
+            "request": "launch",
+            "mainClass": "secondo",
+            "projectName": "esercizi_b234545f"
+        },
+        {
+            "type": "java",
+            "name": "primo",
+            "request": "launch",
+            "mainClass": "primo",
+            "projectName": "esercizi_b234545f"
+        },
+        {
+            "type": "java",
+            "name": "Primitivi",
+            "request": "launch",
+            "mainClass": "Primitivi",
+            "projectName": "esercizi_b234545f"
+        },
+        {
+            "type": "java",
             "name": "HelloWorld",
             "request": "launch",
             "mainClass": "HelloWorld",
