@@ -8,27 +8,21 @@ Per n= 1, n! = 1 */
 import java.util.Scanner;
 
 public class terzo {
-    
     public static void main(String[] args) {
         
-
         Scanner s = new Scanner(System.in);
 
         System.out.println("Inserisci un numero: ");
         int n = s.nextInt();
 
-        int ris = 0;
+        int ris = 1;
 
-        for (int i = n; i>=1; i--){
+        for (int i = n; i>=2; i--){
 
-            ris += n * (n - (n-i));
+            ris *= i;
         }
-
 
         System.out.println("il fattoriale di " + n + " è: " + ris);
     }
 }
-
-
-// DA FINIRE
 
