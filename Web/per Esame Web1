@@ -1,0 +1,80 @@
+PER WEB 1
+
+HTML
+CSS
+JAVASCRIPT 
+REACT
+
+(NON CI SARANNO DOMANDE A CROCETTE)
+
+come faresti in modo che un div abbiamo sfondo rosso e scritte bianche senza style 
+
+cos e DOM e come si manipola, come cambiare i div da Javascript
+
+dato in un html una lista riempire tramite Javascript
+
+chiamate sincrone e asincrone
+
+selettori
+
+reconciliation
+
+
+
+
+
+
+non si puo usare risultato chiamata asincrona su una funzione sincrona
+
+------------------------------------------
+
+COSA STAMPA QUESTO?
+
+const url="https://jsonplaceholder.typicode.com/posts/1";
+
+let post="";
+
+fetch(url).then(response=>response.json()).then(ris=>
+	{
+
+	console.log("risultato fetch",ris)
+	post=ris;
+	}
+).catch(err=>console.log(err))
+
+async function getPost(){
+
+	const response = fetch(url);
+	const ris =await response.json()
+	console.log(ris)
+	return ris;
+}
+getPost().then(ris=>console.log(ris));
+console.log("post",post);
+
+-----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

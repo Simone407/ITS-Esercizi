@@ -1,0 +1,57 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "terzo",
+            "request": "launch",
+            "mainClass": "terzo",
+            "projectName": "esercizi_b234545f"
+        },
+        {
+            "type": "java",
+            "name": "secondo",
+            "request": "launch",
+            "mainClass": "secondo",
+            "projectName": "esercizi_b234545f"
+        },
+        {
+            "type": "java",
+            "name": "primo",
+            "request": "launch",
+            "mainClass": "primo",
+            "projectName": "esercizi_b234545f"
+        },
+        {
+            "type": "java",
+            "name": "Primitivi",
+            "request": "launch",
+            "mainClass": "Primitivi",
+            "projectName": "esercizi_b234545f"
+        },
+        {
+            "type": "java",
+            "name": "HelloWorld",
+            "request": "launch",
+            "mainClass": "HelloWorld",
+            "projectName": "esercizi_b234545f"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "esercizi_b234545f"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}

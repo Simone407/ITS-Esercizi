@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(205, 233, 149);
+}
+
+.sito{
+    background-color: aliceblue;
+    margin-left: 410px;
+    margin-right: 410px;
+}
+
+table {
+    margin: 15px;
+    text-transform: uppercase;
+    background-color: rgb(194, 194, 194);
+
+}
+
+.img1 {
+    height: 100px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+
+}
+
+.img2 {
+    height: 200px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin-left: 20px;
+}
+
+.img3 {
+    height: 200px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin-left: 20px;
+    margin-top: 30px;
+}

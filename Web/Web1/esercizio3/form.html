@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    
+    <h1>Benvenuto nel nostro sito!</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque iaculis lacus non tellus vehicula semper. 
+        Maecenas at diam id lectus aliquet auctor et in arcu. Nunc eros dui, mollis eget nibh ut, lobortis auctor leo. 
+        Phasellus ultricies eleifend nisi sed sollicitudin. Cras dignissim est ut tempor laoreet. Suspendisse at est magna. Praesent odio ligula, 
+        tempor non tempus semper, consequat ut tellus. Suspendisse varius placerat purus eu convallis. Nam hendrerit nibh urna, sed convallis leo 
+        placerat sit amet. Suspendisse interdum, quam interdum congue vulputate, elit elit convallis sem, at facilisis urna lacus eget eros. 
+        Quisque suscipit, sapien vel volutpat congue, sem eros cursus lorem, ac gravida massa dui vel ex. Integer dictum blandit turpis. 
+        Integer euismod turpis enim, placerat egestas nisl molestie vitae. Mauris ac maximus nisl. Curabitur lobortis augue consequat, fringilla eros 
+        molestie, porta neque.
+    </p>
+
+    <h1>Crea un nuovo account</h1>
+
+    <form method="post" action="" name="form">
+        <table>
+            <div class="table">
+                    <tr>
+                        <td><input type="text" name="nome" placeholder="Nome"><br></td>
+                        <td><input type="text" name="cognome" placeholder="Cognome"><br></td>
+                    </tr>
+            </div>
+        </table>
+        
+        <input type="text" name="mail" placeholder="Il tuo indirizzo e-mail"><br>
+        <input type="text" name="password" placeholder="Nuova password "><br>
+
+        <br>
+
+        <input type="radio" name="sesso" value="U" required>Uomo
+        <input type="radio" name="sesso" value="D" required>Donna
+
+        <h4>Come hai conosciuto il nostro sito? <select name="scelta"><option value="Amici">Consigliato da amici</option></select></h4>
+
+        <h4>Parlaci di te!</h4>
+
+        <textarea name="commento" rows="5" cols="40"></textarea><br>
+
+        <br>
+
+        <input type="radio" name="condizioni" value="C" required>Accetto le <a href=""> Condizioni d'uso</a><br>
+
+        <br>
+
+        <input type="submit" name="invia" value="Crea Account">
+
+    </form>
+</body>
+</html>
