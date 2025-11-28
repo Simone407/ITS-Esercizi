@@ -1,6 +1,0 @@
-CategoriaOpera {DIPINTO,SCULTURA,MOSAICO,MANOSCRITTO,ALTRO}
-
-TipoBiglietto{STANDARD,EXTENDED_ACCESS}
-
-CorrenteArtistica: String
-
