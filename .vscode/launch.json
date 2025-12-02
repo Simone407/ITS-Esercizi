@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "EsempioDate",
+            "request": "launch",
+            "mainClass": "EsempioDate",
+            "projectName": "esercizi_b234545f"
+        },
+        {
+            "type": "java",
             "name": "terzo",
             "request": "launch",
             "mainClass": "terzo",
