@@ -8,14 +8,11 @@ REACT
 
 
 
-esame web: 12 domande teoria da 0.5  
-
-
+esame web: 12 domande aperte di teoria da 0.5  
+1 su sync-await, 1 su sincronizzazione
+2 su react 3 html 3 css 3 javascript
 preparato (	da chatgpt
 96 domande da 0.5  + 32 esercizi pratici )
-
-
-
 
 
 
@@ -35,6 +32,17 @@ selettori
 reconciliation
 
 sync await su js o react
+
+cos e un componente react
+
+scope, const, var 
+
+cos e jsx
+
+short circuit in js
+
+spread js
+
 
 
 
@@ -68,28 +76,3 @@ getPost().then(ris=>console.log(ris));
 console.log("post",post);
 
 -----------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
