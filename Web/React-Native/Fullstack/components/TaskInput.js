@@ -20,7 +20,7 @@ const TaskInput = (props) => {
   return (
     <Modal visible={props.visible} animationType="slide">
       <View style={styles.inputContainer}>
-        <Image style={styles.image} source={require("/home/its/Immagini/goal.png")}></Image>
+        <Image style={styles.image} source={require("../assets/goal.png")}></Image>
         <TextInput
           style={styles.textInput}
           placeholder="Inserisci task"

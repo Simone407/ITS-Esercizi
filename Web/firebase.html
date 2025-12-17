@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase</title>
+</head>
+<body>
+
+    <div id="tasks"></div>
+    <input type="text" id="taskInput">
+    <button id="add">Add Task</button>
+    <!-- <button onclick="AddTasks()"> Get Tasks </button> -->
+     
+    <script>
+       
+        const urlBase="https://todoapp-c75c6-default-rtdb.firebaseio.com/tasks/";
+
+
+        const btn = document.querySelector("#add")
+        btn.addEventListener("click", () => {
+            const task = document.getElementById("taskInput").value
+            alert(task);
+
+            const newtask={
+                text:task,
+                done:false
+            }
+
+            fetch(urlBase+".json", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newtask)
+            }).then(resp => resp.json()).then(ris=>console.log(ris)).catch(err=>console.error(err));
+        })
+
+        async function leggitasks() {
+            const response = await fetch(urlBase + ".json");
+            const dati = await response.json();
+            console.log(dati);
+            const tasksDiv = Object.keys(dati).map(id => ({
+                id, ...dati[id]
+            }));
+            console.log(tasks);
+            tasks.forEach(t => {
+                document.querySelector("#tasks").innerHTML += "<p>"+ t.text + "}</p>";
+            });
+
+            
+            
+        }
+        leggitasks();
+        
+    </script>
+
+    
+    
+</body>
+</html>

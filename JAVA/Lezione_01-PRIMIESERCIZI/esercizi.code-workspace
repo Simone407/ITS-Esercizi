@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../eclipse-workspace/corsoBase"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"git.ignoreLimitWarning": true,
+		"java.debug.settings.onBuildFailureProceed": true
+	}
+}

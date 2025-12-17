@@ -1,15 +1,13 @@
 import { useState } from "react";
 import {
   StyleSheet,
-  Text,
-  TextInput,
   View,
   Button,
-  ScrollView,
   FlatList,
 } from "react-native";
 import TaskItem from "./components/TaskItem";
 import TaskInput from "./components/TaskInput";
+//tasksService from "./services/tasksService";
 
 export default function App() {
   // const [task, setTask] = useState("");
@@ -92,7 +90,7 @@ const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
     backgroundColor: "#ebeae6ff",
-    paddingTop: 50,
+    paddingTop: 240,
     paddingHorizontal: 16,
   },
   // textInput: {

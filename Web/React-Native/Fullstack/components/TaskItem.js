@@ -11,7 +11,7 @@ const TaskItem = ({taskItem,onDelete}) => {
 
     >
    
-      <Text style={styles.taskText}>{taskItem.task}</Text>
+      <Text style={styles.taskText}>{taskItem.text ?? taskItem.task}</Text>
 
     </Pressable>
     </View>
