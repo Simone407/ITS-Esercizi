@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiamata API</title>
+</head>
+<body>
+    
+<!-- Scrivi una chiamata fetch usando then() e catch() che recupera 
+dei dati da un'API e stampa il risultato all'interno di un div con id='output'. -->
+
+<div id="output"></div>
+
+<script>
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+    })
+    .catch(error => {
+        console.error('Errore:', error);
+    });
+</script>
+
+</body>
+</html>

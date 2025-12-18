@@ -8,20 +8,57 @@ REACT
 
 
 
-esame web: 12 domande aperte di teoria da 0.5  
-1 su sync-await, 1 su sincronizzazione
-2 su react 3 html 3 css 3 javascript
+esame web: 12 domande aperte di teoria da 0.5 punti + 2 esercizi da 4 punti
+esercizi: 1 react 1 javascript
 preparato (	da chatgpt 96 domande da 0.5  + 32 esercizi pratici )
 
-
-update possibili esercizi: 1 react 1 javascript
-
+7 web1 e 7 web2 meno su css + su il resto
 
 
 
 
+domande possibili:
 
-esempi domande
+cosa significa prevenire il comportamento di default
+
+a cosa serve il positioning in css e esempio: (risp: position relative..fixed... )
+
+esce dal flusso naturale di un elemento della pagina elemento sovrapposto da un altro elemento (absolute e fixed permettono la sovrapposizione di un altro elemento)
+
+precendeza di layer di elementi (con z-index)
+
+position absolute si posiziona in base a chi (risp: al primo elemento non statico)
+
+rendere testo in grassetto tramite css (font -weight)
+
+cosa fa display:block in un elemnto html (occupa lo spazio in verticale)
+
+cosa deve avere ogni elemento renderizzato (una lista: una chiave, con diverse liste nello stesso componente chiave univoca nella stesa lista)
+
+perche uso dom virtuale (perche efficiente, per non modificare tutto il dom ad ogni modifica ma solo la parte modificata, react gestisce automaticamente il dom )
+
+come si chiamano i form che utilizzano use state (in react) (campi e form controllati, ad ogni click lo use state cambia (non con lo use ref))
+
+cosa fa lo use ref (si referisce ad un elemento)
+
+cos e funzione costruttore javascript (con cui puoi usare la new per istanziare nuovi oggetti)
+
+
+
+
+
+
+esempi argomenti
+
+destrutturazione
+
+spread operator
+
+sync await
+
+sincronizzazione
+
+react, html,css, javascript
 
 dato la fetch modificala in sync await
 
@@ -49,11 +86,27 @@ short circuit in js
 
 spread js
 
+use content
+
+riusabilita dei componenti
+
+dispay, position, block
+
+moduli, import export
+
 
 
 
 
 non si puo usare risultato chiamata asincrona su una funzione sincrona
+------------------------------------------------------------------------------------
+
+ESERCIZIO TOLTO:
+
+Scrivi una chiamata fetch usando then() e catch() che recupera 
+dei dati da un'API e stampa il risultato all'interno di un div con id='output'.
+
+------------------------------------------------------------------------------------
 
 ------------------------------------------
 
@@ -81,4 +134,38 @@ async function getPost(){
 getPost().then(ris=>console.log(ris));
 console.log("post",post);
 
------------------------------------------
+---------------------------------------------------------------------------
+
+spread operator...
+
+cosa fa: 	const {nome} = persona  	--->   crea costante nome = persona
+
+
+const persona {
+
+	nome: 'rob'
+	cognome: 'boh'
+
+}
+
+const stud{
+	...persona,
+	matricola: '....'
+
+}
+
+--------------------------------------------------------------------------------
+
+
+display inline e block
+
+
+
+
+
+
+
+
+PER ESAME PROGETTAZIONE 2
+
+API e domande sul cloud
