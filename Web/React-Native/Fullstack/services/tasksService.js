@@ -1,77 +1,62 @@
-const URL_BASE = "https://todoapp-c75c6-default-rtdb.firebaseio.com/tasks/";
+const TASKS_URL = "https://prova-its-web3-default-rtdb.firebaseio.com/tasks/";
 
-async function getTasks() {
-  const response = await fetch(URL_BASE + ".json");
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  const data = await response.json();
-  if (!data) return [];
-  // Firebase returns an object keyed by id. Convert to array.
-  return Object.keys(data).map((id) => ({ id, ...data[id] }));
+async function handleResponse(response) {
+  if (!response.ok) {
+    const errorText = response.text();
+    throw new Error("Fire base error:" + response.status + " " + errorText);
+  }
+  return response.json();
 }
 
-async function addTask(task) {
-  // task: { text: string, done: boolean }
-  const response = await fetch(URL_BASE + ".json", {
-    method: "POST",
+export async function fetchTasks() {
+  try {
+    const response = await fetch(TASKS_URL + ".json");
+    const data = await handleResponse(response);
+    // console.log("data",data)
+    if (!data) {
+      return [];
+    }
+    const tasks = Object.keys(data).map((id) => {
+      console.log(id);
+      return {
+        id,
+
+        ...data[id],
+      };
+    });
+    console.log("tasks", tasks);
+    return tasks;
+    //   return Object.entries(data).map(([id, value]) => ({
+    //   id,
+    //   text: value.text,
+    //   done: Boolean(value.done),
+    // }));
+  } catch (err) {
+    console.error("ERRORE fecthTasks:" + err);
+  }
+}
+
+export async function addTask(taskText) {
+  try {
+    const newTask = { text: taskText, done: false };
+    const response = await fetch(TASKS_URL + ".json", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newTask),
+    });
+    return await response.json();
+  } catch (err) {
+    console.log("Errore:", err);
+    return null;
+  }
+}
+
+export async function doneTask(task) {
+  const response = await fetch(TASKS_URL + task.id + ".json", {
+    method: "PATCH",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(task),
+    body: JSON.stringify({ done: !task.done }),
   });
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  const result = await response.json();
-  // Firebase returns { name: "-Mk..." }
-  return { id: result.name, ...task };
+
+  await handleResponse(response);
 }
-
-async function deleteTask(id) {
-  const response = await fetch(URL_BASE + id + ".json", { method: "DELETE" });
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  return true;
-}
-
-export default { getTasks, addTask, deleteTask };
-        
-        
-        const urlBase="https://todoapp-c75c6-default-rtdb.firebaseio.com/tasks/";
-
-        const btn = document.querySelector("#add");
-        if (btn) {
-            btn.addEventListener("click", () => {
-                const task = document.getElementById("taskInput").value;
-                alert(task);
-
-                const newtask = {
-                    text: task,
-                    done: false
-                };
-
-                fetch(urlBase + ".json", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(newtask)
-                })
-                .then(resp => resp.json())
-                .then(ris => console.log(ris))
-                .catch(err => console.error(err));
-            });
-        }
-
-        async function leggitasks() {
-            const response = await fetch(urlBase + ".json");
-            const dati = await response.json();
-            console.log(dati);
-            const tasksDiv = Object.keys(dati).map(id => ({
-                id, ...dati[id]
-            }));
-            console.log(tasksDiv);
-            let tasksHtml = "";
-            tasksDiv.forEach(t => {
-                tasksHtml += "<p>" + t.text + "</p>";
-            });
-            document.querySelector("#tasks").innerHTML = tasksHtml;
-        }
-
-        leggitasks();
-        
-        

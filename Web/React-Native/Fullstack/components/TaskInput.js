@@ -9,6 +9,7 @@ const TaskInput = (props) => {
     setTask(enteredTask);
   }
   function addTask() {
+    
     props.onAddTask(task);
     setTask("");
     props.onCancel();
@@ -32,11 +33,13 @@ const TaskInput = (props) => {
             <Button
               title="Aggiungi"
               onPress={addTask}
+               color="#f31282"
               disabled={task === ""}
+              
             ></Button>
           </View>
           <View style={styles.button}>
-            <Button title="Annulla" onPress={annulla}></Button>
+            <Button title="Annulla" onPress={annulla}  color="#b180f0"></Button>
           </View>
         </View>
       </View>
@@ -47,9 +50,10 @@ const TaskInput = (props) => {
 const styles = StyleSheet.create({
   textInput: {
     borderWidth: 1,
-    borderColor: "#cccccc",
+    borderColor: "#e4d0ff",
     width: "70%",
     padding: 8,
+    backgroundColor:"#e4d0ff"
   },
   image:{
     width:100,
@@ -65,6 +69,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#cccccc",
     gap: 16,
+    backgroundColor:"#311b6b"
   },
   buttonContainer: {
     flexDirection: "row",
