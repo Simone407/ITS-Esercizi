@@ -1,0 +1,31 @@
+sia domande chiuse che aperte. 6 chiuse e 4 aperte
+
+
+
+api
+cloud computing 
+cloud 
+api web
+cross origin 
+preflight
+verbi http
+livelli maturita api (0,1,2,3)
+scalabilità
+dns
+name server
+record dns = a,txt, mx, aaaa, ns, cname
+cos e cloud computing: un modello di risorse, è scalabile, on-demand (su richiesta)
+I.A.A.S. =  (infrastucture as a service (AWS,GOOGLE CLOUD)) 
+S.A.S. = SOFTWARE AS A SERVICE (GOOGLE DRIVE, DROPBOX, GMAIL, NETFLIX) 0 controllo sul software non si puo modificare,  ,
+P.A.A.S = PLATFORM AS A SERVICE (AMBIENTE PRECONFIG PER UTILIZZARE E SVILUPPARE IL TUO CODICE (FIREBASE) )
+on premise (in loco) = server da noi o un server su un cloud esterno ? 
+payload
+
+
+
+perche il cloud riduce i costi iniziali. = (non acquisti l hardware)
+caratteristiche modello cloud = computing,potenza,calcolo,persistenza dati,networking
+cosa sono API = regole che permettono e definiscono la comunicazione tra sistemi (livelli 0: valuta del pox, un solo endpoint, solo chiamate post , 1:...)
+quali sono i verbi su chimate rest = post get put patch delete option 
+cosa si intende cross origin = è un meccanismo che permette a un server di indicare esplicitamente quali origini possono accedere alle sue risorse
+cosa si intende same origin = è una politica di sicurezza implementata dai browser che impedisce a una pagina web di fare richieste a un dominio diverso da quello che ha servito la pagina.
