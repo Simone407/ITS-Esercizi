@@ -1,0 +1,54 @@
+
+Raffinamento dei requisiti
+
+1. Dei clienti interessa:
+	1.1 nome
+	1.2 email
+
+2. Dei ristoranti interessa:
+	2.1 nome
+	2.2 partita IVA (stringa numerica)
+	2.3 indirizzo
+	2.4 città
+	2.5 cucine offerte(lista amministrata dallo staff)
+	2.6 giorni e orari di chiusura
+	
+3. Delle prenotazioni:
+	3.1 data
+	3.2 ora
+	3.3 numero commensali
+	3.4 stato della prenotazione
+		3.4.1 nasce nello stato pendente 
+		3.4.2 se accettata o rifiutata
+		3.4.3 se completata (quando il cliente si presenta)
+		3.4.4 se non utilizzata (quando il cliente non si presenta)
+		3.4.5 se annullata (entro le 24h precedenti all'inizio della prenotazione)
+	3.5 promozione applicata (anche nessuna) (v. req. 4)
+	3.6 il cliente (v. req. 1)
+	3.6 il ristorante (v. req. 2)
+	
+	
+4. Delle promozioni interessa:
+	4.1 percentuale scontistica applicata
+	4.2 ristorante (v. req. 2)
+	4.3 periodo (data inizio e data fine)
+	4.4 giorni della settimana e ora inizio/fine
+	4.5 numero max di coperti al giorno
+	
+	
+999. Funzionalità:
+	999.1 Al momento della prenotazione, il cliente sceglie se aderire ad una delle promozioni (o nessuna)+
+	
+	999.2 Il sistema deve permettere ai ristoratori di RistoBook di calcolare alcune statistiche
+di utilizzo delle loro promozioni. In particolare, dato un periodo di tempo, RistoBook deve permettere di calcolare, per ogni promozione del ristorante considerato, il 40
+numero medio di clienti al giorno (dove la media è calcolata sui giorni di validità
+della promozione) che ha utilizzato quella promozione in una prenotazione.
+	
+	999.3 Data una città x, un insieme di tipologie di cucina C, un tasso di sconto minimo
+s ed una data d, i clienti devono poter trovare quali sono i ristoranti nella città x
+che offrono almeno una delle tipologie di cucina in C e prevedono promozioni con 45
+sconti di tasso almeno s nella data d ancora utilizzabili per il numero di coperti
+che sono interessati a prenotare.
+	
+	
+	

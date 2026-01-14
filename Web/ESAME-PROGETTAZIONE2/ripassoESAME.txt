@@ -1,0 +1,185 @@
+api
+cloud computing 
+cloud 
+api web
+cross origin 
+preflight
+verbi http
+livelli maturita api (0,1,2,3)
+scalabilità
+dns
+name server
+record dns = a,txt, mx, aaaa, ns, cname
+cos e cloud computing: un modello di risorse, è scalabile, on-demand (su richiesta)
+I.A.A.S. =  (infrastucture as a service (AWS,GOOGLE CLOUD)) 
+S.A.S. = SOFTWARE AS A SERVICE (GOOGLE DRIVE, DROPBOX, GMAIL, NETFLIX) 0 controllo sul software non si puo modificare,  ,
+P.A.A.S = PLATFORM AS A SERVICE (AMBIENTE PRECONFIG PER UTILIZZARE E SVILUPPARE IL TUO CODICE (FIREBASE) )
+on premise (in loco) = server da noi o un server su un cloud esterno ? 
+payload
+
+
+
+perche il cloud riduce i costi iniziali. = (non acquisti l hardware)
+caratteristiche modello cloud = computing,potenza,calcolo,persistenza dati,networking
+cosa sono API = regole che permettono e definiscono la comunicazione tra sistemi (livelli 0: valuta del pox, un solo endpoint, solo chiamate post , 1:...)
+quali sono i verbi su chimate rest = post get put patch delete option 
+cosa si intende cross origin = è un meccanismo che permette a un server di indicare esplicitamente quali origini possono accedere alle sue risorse
+cosa si intende same origin = è una politica di sicurezza implementata dai browser che impedisce a una pagina web di fare richieste a un dominio diverso da quello che ha servito la pagina.
+
+
+
+SPIEGAZIONI
+
+## API e API Web
+
+- Un’**API** è un insieme di **regole** e **contratti** che definiscono come due sistemi software possono comunicare tra loro in modo standardizzato.  
+- Nasconde i dettagli interni (information hiding) e espone solo ciò che serve al client (funzioni, dati, formati).  
+- Un’**API Web** è un’API accessibile tramite rete (HTTP/HTTPS), di solito con stile REST: risorse identificate da URL, verbi HTTP (GET, POST, ecc.), risposte con status code e dati in JSON.
+
+***
+
+## Verbi HTTP (REST)
+
+- **GET**: legge dati, non modifica lo stato del server; è *safe* e *idempotente*.  
+- **POST**: crea nuove risorse o avvia azioni non idempotenti; due POST uguali possono creare due oggetti diversi.  
+- **PUT**: sostituisce completamente una risorsa esistente; se lo ripeti più volte il risultato finale non cambia (idempotente).  
+- **PATCH**: aggiorna solo alcuni campi di una risorsa; concettualmente tende a essere idempotente se la semantica è “porta questo campo a questo valore”.  
+- **DELETE**: elimina una risorsa; chiamarlo due volte non cambia il fatto che la risorsa alla fine è comunque assente (idempotente).  
+- **OPTIONS**: serve a chiedere “cosa è permesso qui?” (metodi supportati, usato nei preflight CORS).  
+
+***
+
+## Livelli di maturità API (0,1,2,3)
+
+- **Livello 0 (RPC/POX)**:  
+  - Un solo endpoint (es. `/api`).  
+  - Si usa quasi sempre POST.  
+  - Nel body si indica l’azione (`"action": "getUser"`).  
+  - HTTP è solo un “tunnel”, non si sfruttano verbi e status code in modo semantico.
+
+- **Livello 1 (Risorse)**:  
+  - Si introducono URL diversi per le risorse (`/users`, `/products/123`).  
+  - Ma spesso si continua a usare solo POST e un campo `action`.  
+  - Migliore organizzazione, ma ancora poco “RESTful”.
+
+- **Livello 2 (Verbi HTTP + status code)**:  
+  - Ogni operazione usa il verbo HTTP corretto (GET per leggere, POST per creare, PUT/PATCH per aggiornare, DELETE per eliminare).  
+  - Si usano status code significativi: 200, 201, 204, 400, 404, 409, ecc.  
+  - È il livello **standard di fatto** nella pratica.
+
+- **Livello 3 (HATEOAS)**:  
+  - Le risposte contengono anche link alle azioni possibili (self, update, delete, next, ecc.).  
+  - Il client “scopre” cosa può fare leggendo i link ipertestuali nella risposta.  
+  - Molto teorico, poco usato in progetti reali.
+
+***
+
+## Same Origin e Cross Origin (CORS, Preflight)
+
+- **Same-Origin Policy**: regola di sicurezza del browser che dice:  
+  - JavaScript in una pagina può accedere liberamente solo a risorse dello **stesso origin** (stesso protocollo, stesso dominio, stessa porta).  
+  - Se l’origin cambia anche solo per porta o protocollo, l’accesso viene bloccato di default.
+
+- **Same origin** = stessa tripletta:  
+  - Protocollo (http / https)  
+  - Dominio (es. `example.com` vs `api.example.com`)  
+  - Porta (80, 443, 3000, ecc.)
+
+- **Cross origin**: quando uno di questi tre cambia.  
+  - Esempio: pagina su `https://app.example.com` che chiama `https://api.other.com` → questo è **cross-origin**.
+
+- **Cross-Origin Resource Sharing (CORS)**:  
+  - È il meccanismo che permette a un server di dichiarare **esplicitamente quali origini esterne sono autorizzate** ad accedere alle sue risorse.  
+  - Lo fa tramite header di risposta come `Access-Control-Allow-Origin`, `Access-Control-Allow-Methods`, `Access-Control-Allow-Headers`, ecc.
+
+- **Preflight**:  
+  - Per richieste considerate “sensibili” (metodi non semplici, header personalizzati, `Content-Type: application/json`, invio di credenziali), il browser prima manda una richiesta **OPTIONS**.  
+  - In quella OPTIONS chiede al server: “da questo origin, posso inviare una POST/PUT/DELETE con questi header?”.  
+  - Se il server risponde con gli header CORS adeguati, il browser allora esegue la richiesta vera.
+
+***
+
+## Cloud Computing: modello e caratteristiche
+
+- **Cos’è il cloud computing**:  
+  - È un **modello di erogazione di risorse IT** (compute, storage, rete, piattaforme, software) via rete, in modo **scalabile**, **on-demand**, e basato su consumo.  
+- **Caratteristiche chiave**:  
+  - On-demand self-service: l’utente può allocare risorse da solo, senza intervento umano del provider.  
+  - Broad network access: accesso tramite rete da vari dispositivi.  
+  - Resource pooling: risorse fisiche condivise fra più clienti ma isolate logicamente (multi-tenant).  
+  - Rapid elasticity: possibilità di aumentare o ridurre rapidamente le risorse in base al carico (scalabilità).  
+  - Measured service: tutto l’uso è misurato e fatturato a consumo (pay-per-use).
+
+- **Perché riduce i costi iniziali**:  
+  - Non devi comprare hardware (server, storage, networking), quindi niente grande spesa iniziale (CapEx).  
+  - Paghi mensilmente solo ciò che usi (OpEx), con la possibilità di scalare su e giù.
+
+***
+
+## Modelli di servizio: IaaS, PaaS, SaaS
+
+- **IaaS (Infrastructure as a Service)**:  
+  - Il provider ti offre macchine virtuali, storage, rete, ma **tu gestisci sistema operativo, middleware, applicazioni e dati**.  
+  - Esempi: AWS EC2, Google Compute Engine.  
+  - Hai molto controllo, ma anche più responsabilità (patch, sicurezza, configurazioni).
+
+- **PaaS (Platform as a Service)**:  
+  - Il provider ti fornisce un **ambiente preconfigurato** (runtime, database, servizi) dove puoi solo caricare/sviluppare codice.  
+  - Tu ti occupi del codice, il provider gestisce infrastruttura, OS, scalabilità, ecc.  
+  - Esempi: Firebase, Heroku, App Engine.  
+  - Ottimo per sviluppare velocemente senza fare DevOps.
+
+- **SaaS (Software as a Service)**:  
+  - Il provider offre direttamente un **software completo** via web (es. posta, cloud storage, streaming).  
+  - L’utente usa il servizio ma **non può modificarne il codice o l’architettura** (controllo quasi nullo).  
+  - Esempi: Gmail, Google Drive, Dropbox, Netflix.  
+  - Vantaggio: nessuna gestione tecnica; svantaggio: pochissima personalizzazione.
+
+***
+
+## Cloud vs On-Premise
+
+- **On-premise (in loco)**:  
+  - I server sono fisicamente “da te” (o in un data center che gestisci tu).  
+  - Ti occupi tu di acquisto hardware, installazione, manutenzione, sicurezza, backup, aggiornamenti.  
+  - Più controllo, più costi e complessità.
+
+- **Cloud**:  
+  - I server stanno presso il provider.  
+  - Il provider si occupa di alimentazione, cooling, hardware, molta parte della sicurezza di base.  
+  - Tu paghi le risorse come servizio, senza possedere l’hardware.
+
+***
+
+## Scalabilità
+
+- **Scalabilità verticale**:  
+  - “Ingrandire” una singola macchina (più CPU, più RAM).  
+  - Più semplice, ma con un limite fisico.
+
+- **Scalabilità orizzontale**:  
+  - Aggiungere più istanze/machine uguali dietro un bilanciatore di carico.  
+  - Il cloud facilita molto questo tipo di scalabilità dinamica (auto-scaling).
+
+***
+
+## DNS, Name Server e record principali
+
+- **DNS**: sistema che traduce nomi di dominio (es. `example.com`) in indirizzi IP.  
+- **Name server**: server che conserva e risponde con i record DNS autoritativi per un dominio.
+
+- **Record A**: associa un nome a un indirizzo IPv4.  
+- **Record AAAA**: associa un nome a un indirizzo IPv6.  
+- **Record MX**: indica i server che gestiscono la posta per il dominio.  
+- **Record NS**: indica quali name server sono autoritativi per quel dominio.  
+- **Record CNAME**: crea un alias da un nome a un altro nome (non a un IP).  
+- **Record TXT**: contiene testo libero, spesso usato per SPF, DKIM, DMARC e verifiche di dominio.
+
+***
+
+## Payload
+
+- In HTTP, il **payload** è il **contenuto utile** trasportato nel body della richiesta o della risposta (per esempio un JSON con i dati dell’utente).  
+- Negli **API REST**, il payload tipico è JSON nelle richieste POST/PUT/PATCH e nelle risposte 200/201.  
+- Non fa parte del payload: header, URL, metodo; sono “metadati” che descrivono come gestire quel payload.
+
