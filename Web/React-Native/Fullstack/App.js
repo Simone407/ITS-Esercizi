@@ -1,86 +1,65 @@
-import { useState } from "react";
-import {
-  StyleSheet,
-  View,
-  Button,
-  FlatList,
-} from "react-native";
+import { useEffect, useState } from "react";
+import { StyleSheet, View, Button, FlatList } from "react-native";
+
 import TaskItem from "./components/TaskItem";
 import TaskInput from "./components/TaskInput";
-//tasksService from "./services/tasksService";
+import { addTask, doneTask, fetchTasks } from "./services/tasksService";
 
 export default function App() {
-  // const [task, setTask] = useState("");
   const [tasks, setTasks] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
 
   function startAddTask() {
-    setModalVisible(true); //Apre la modale
+    setModalVisible(true);
   }
 
   function endAddTask() {
-    setModalVisible(false); //Apre la modale
+    setModalVisible(false);
   }
 
-  // function taskInputHandler(enteredTask) {
-  //   console.log(enteredTask);
-  //   setTask(enteredTask);
-  // }
-  function deleteTask(id) {
-    setTasks((current) => {
-      return current.filter((t) => t.id !== id);
-    });
+  async function loadTasks() {
+    const tasksFromApi = await fetchTasks();
+    setTasks(tasksFromApi);
   }
-  function addTaskHandler(task) {
-    setTasks((current) => [...current, { task, id: new Date() }]);
+
+  useEffect(() => {
+    loadTasks();
+  }, []);
+
+  async function addTaskHandler(task) {
+    await addTask(task);
+    await loadTasks();
+    endAddTask();
   }
-  // function addTaskHandler() {
-  //   setTasks((current) => [...current, { task,id:new Date()}]);
-  //   setTask("");
-  // }
+
+  async function completeTask(task) {
+    await doneTask(task);
+    await loadTasks();
+  }
+
+  const visibleTasks = tasks.filter(task => !task.done);
 
   return (
     <View style={styles.appContainer}>
       <Button title="Add New Task" color="#5e0acc" onPress={startAddTask} />
 
-      <TaskInput visible={modalVisible} onAddTask={addTaskHandler} onCancel={endAddTask}></TaskInput>
-      {/* <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Inserisci task"
-          onChangeText={taskInputHandler}
-          value={task}
-        />
-        <Button
-          title="Aggiungi"
-          onPress={addTaskHandler}
-          disabled={task === ""}
-        ></Button>
-      </View> */}
+      <TaskInput
+        visible={modalVisible}
+        onAddTask={addTaskHandler}
+        onCancel={endAddTask}
+      />
+
       <View style={styles.goalsContainer}>
         <FlatList
-          alwaysBounceVertical={true}
-          data={tasks}
-          renderItem={(itemData) => {
-            return (
-              <TaskItem
-                onDelete={deleteTask}
-                taskItem={itemData.item}
-              ></TaskItem>
-              // <View style={styles.taskItem}>
-              //   <Text style={styles.taskText}>{itemData.item.task}</Text>
-              // </View>
-            );
-          }}
-          keyExtractor={(item) => item.id}
+          data={visibleTasks}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => (
+            <TaskItem
+              taskItem={item}
+              onDelete={completeTask}
+            />
+          )}
         />
-        {/* <ScrollView>
-          {tasks.map((t, index) => (
-            <View key={index} style={styles.taskItem}>
-              <Text style={styles.taskText}>{t}</Text>
-            </View>
-          ))}
-        </ScrollView> */}
       </View>
     </View>
   );
@@ -89,25 +68,10 @@ export default function App() {
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    backgroundColor: "#ebeae6ff",
-    paddingTop: 240,
+    backgroundColor: "#fff",
+    paddingTop: 50,
     paddingHorizontal: 16,
   },
-  // textInput: {
-  //   borderWidth: 1,
-  //   borderColor: "#cccccc",
-  //   width: "70%",
-  //   padding: 8,
-  // },
-  // inputContainer: {
-  //   flex: 1,
-  //   flexDirection: "row",
-  //   justifyContent: "space-between",
-  //   alignItems: "center",
-  //   marginBottom: 24,
-  //   borderBottomWidth: 1,
-  //   borderColor: "#cccccc",
-  // },
   goalsContainer: {
     flex: 4,
   },

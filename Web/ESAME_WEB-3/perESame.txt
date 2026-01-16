@@ -1,0 +1,13 @@
+
+
+
+
+
+
+
+
+
+
+POSSIBILI DOMANDE:
+
+la logica di js è uguale a quella di react native? si, perche i componenti sono ancora funzioni, come gli hook in js

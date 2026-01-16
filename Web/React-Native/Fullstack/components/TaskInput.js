@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { StyleSheet, TextInput, View, Button, Modal, Image } from "react-native";
+import {
+  StyleSheet,
+  TextInput,
+  View,
+  Button,
+  Modal,
+  Image,
+  Pressable,
+  Text,
+} from "react-native";
 
 const TaskInput = (props) => {
   const [task, setTask] = useState("");
@@ -21,7 +30,7 @@ const TaskInput = (props) => {
   return (
     <Modal visible={props.visible} animationType="slide">
       <View style={styles.inputContainer}>
-        <Image style={styles.image} source={require("../assets/goal.png")}></Image>
+        <Image style={styles.image} source={require("../assets/images/goal.png")}></Image>
         <TextInput
           style={styles.textInput}
           placeholder="Inserisci task"
@@ -30,13 +39,17 @@ const TaskInput = (props) => {
         />
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
-            <Button
-              title="Aggiungi"
+            <Pressable
               onPress={addTask}
-               color="#f31282"
               disabled={task === ""}
-              
-            ></Button>
+              style={({ pressed }) => [
+                styles.primaryBtn,
+                task === "" && styles.primaryBtnDisabled,
+                pressed && task !== "" && styles.primaryBtnPressed,
+              ]}
+            >
+              <Text style={styles.primaryBtnText}>Aggiungi</Text>
+            </Pressable>
           </View>
           <View style={styles.button}>
             <Button title="Annulla" onPress={annulla}  color="#b180f0"></Button>
@@ -76,6 +89,24 @@ const styles = StyleSheet.create({
   },
   button: {
     marginHorizontal: 8,
+  },
+  primaryBtn: {
+    backgroundColor: "#f31282",
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  primaryBtnText: {
+    color: "white",
+    fontWeight: "600",
+    textAlign: "center",
+  },
+  primaryBtnDisabled: {
+    backgroundColor: "#d8a8c7",
+    opacity: 0.7,
+  },
+  primaryBtnPressed: {
+    opacity: 0.85,
   },
 });
 export default TaskInput;

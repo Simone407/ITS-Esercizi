@@ -1,8 +1,6 @@
 import React from "react";
 import { Text, View ,StyleSheet, Pressable} from "react-native";
 
-
-
 const TaskItem = ({taskItem,onDelete}) => {
   return (
     <View style={styles.taskItem}>
