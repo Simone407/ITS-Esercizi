@@ -1,9 +1,9 @@
 
 
+DOMANDE DI TEORIA APERTE E CHIUSE + ESERCIZI SU REACT/REACT NATIVE
 
 
-
-
+guardare esericzi su web2 invece di view,input-text si usano tag html di jsx
 
 
 
