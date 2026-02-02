@@ -6,8 +6,13 @@ DOMANDE DI TEORIA APERTE E CHIUSE + ESERCIZI SU REACT/REACT NATIVE
 guardare esericzi su web2 invece di view,input-text si usano tag html di jsx
 
 
+metodi crud,
+
+
 
 
 POSSIBILI DOMANDE:
 
 la logica di js è uguale a quella di react native? si, perche i componenti sono ancora funzioni, come gli hook in js
+
+su firebase, come si usa con react....
