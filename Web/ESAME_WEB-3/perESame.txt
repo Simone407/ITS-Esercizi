@@ -17,7 +17,7 @@ chiamate a firebase )
 
 POSSIBILI DOMANDE:
 
-la logica di js è uguale a quella di react native? si, perche i componenti sono ancora funzioni, come gli hook in js
+Risposte: la logica di js è uguale a quella di react native? si, perche i componenti sono ancora funzioni, come gli hook in js
 
 su firebase, come si usa con react....
 
@@ -30,3 +30,7 @@ lettura, modifica, inserimento, eliminazione dato. fetch, post, patch
 
 
 post, delete, props, inserimento e modifica e cancellazionne lista, chiamate a endpoint "X",  
+
+
+
+Risposte: un input controllato si fa con usestate con value e onchangetext
