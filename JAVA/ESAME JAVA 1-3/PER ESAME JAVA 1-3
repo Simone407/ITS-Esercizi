@@ -1,0 +1,31 @@
+ESAME JAVA 1-3: 
+
+SARA' SOLO "TEORIA", ZERO CODICE DA SCRIVERE DALL'INIZIO. 
+
+10 domande chiuse che chiedono piccoli pezzi di codice (che cosa fanno), 
+altre 5 domande aperte (solo 1 su un codice)
+le domande aperte sono sulla teoria generale, le domande chiuse blocchi di codice e capire se compilano o no
+
+
+
+
+J unit, lambda expressions, interfacce, liste,design patern, multithread, stream, astrazioni,
+interfacce, collection, eccezioni, classi, costrutti base, comparator (confronta 2 ogetti), comparable, 
+
+
+
+POSSIBILI DOMANDE:
+
+un metodo final non si puo sovrascrivere
+
+quando non scrivo costruttore non da errori il co,pilatore perche c e quello di default, overload, overriding
+
+sintassi lambda: (variabili) -> espressione(; non ha alla fine)/istruzione(; alla fine)
+es: (p1,p2)-> p2.getMarca().compareTo(p1.getMarca())
+
+
+
+
+
+
+
